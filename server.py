@@ -108,7 +108,7 @@ def startMonitor(pkt):
     try:
         
         print("Destionation IP: " + ip)
-        monitor = observer.schedule(monitorHandler(ip),watchCommand)
+        monitor = observer.schedule(monitorHandler(ip),watchCommand, recursive = True)
         observer.start() 
         
         

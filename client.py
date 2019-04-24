@@ -81,7 +81,7 @@ def sendData(dstIp, data, title, sourceIp):
 
     else:
         print("We want AES encryption!")
-        encryptedText2 = crypto.aesEncrypt(info)
+        encryptedText2 = crypto.aesEncrypt(info.encode("utf8"))
         print(encryptedText2)
 
         #decryptedText2 = crypto.aesDecrypt(key, encryptedText2)
@@ -325,10 +325,10 @@ def readWatch(pkt):
         
     time.sleep(1)
     print("changing file changes notice")
-    resultsWatch.set(watchMessage)
+    watchMessageChange = watchMessage.strip()
 
+    resultsWatch.set(watchMessageChange)
 
-    
 
     return watchMessage
 
